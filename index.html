@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://supraweb.dev/demos/faq-accordion-card-main/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+
+<body>
+
+  <section>
+    <div class="component">
+      <div class="outer">
+        <div class="left">
+          <picture class="woman">
+            <source media="(max-width: 768px)"
+              srcset="https://supraweb.dev/demos/faq-accordion-card-main/images/illustration-woman-online-mobile.svg">
+            <img src="https://supraweb.dev/demos/faq-accordion-card-main/images/illustration-woman-online-desktop.svg"
+              alt="">
+          </picture>
+          <img class="box" src="https://supraweb.dev/demos/faq-accordion-card-main/images/illustration-box-desktop.svg"
+            alt="">
+        </div>
+        <div class="right">
+          <div class="right-inside">
+            <h1>FAQ</h1>
+            <div class="accordionWrapper">
+              <div class="accordionItem open">
+                <div class="accordionHeading">
+                  <h3>How many team members can I invite?</h3>
+                  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="accordionItemContent">
+                  <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+                    team members for the Premium plan.</p>
+                </div>
+              </div>
+
+              <div class="accordionItem close">
+                <div class="accordionHeading">
+                  <h3>What is the maximum file upload size?</h3>
+                  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="accordionItemContent">
+                  <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                </div>
+              </div>
+
+              <div class="accordionItem close">
+                <div class="accordionHeading">
+                  <h3>How do I reset my password?</h3>
+                  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="accordionItemContent">
+                  <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+                    A reset link will be emailed to you.</p>
+                </div>
+              </div>
+              <div class="accordionItem close">
+                <div class="accordionHeading">
+                  <h3>Can I cancel my subscription?</h3>
+                  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="accordionItemContent">
+                  <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+                </div>
+              </div>
+              <div class="accordionItem close">
+                <div class="accordionHeading">
+                  <h3>Do you provide additional support?</h3>
+                  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="accordionItemContent">
+                  <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let aItem = document.getElementsByClassName('accordionItem');
+    let aHeading = document.getElementsByClassName('accordionHeading');
+
+    for (i = 0; i < aHeading.length; i++) {
+      aHeading[i].addEventListener('click', toggleAcc, false);
+    }
+
+    function toggleAcc() {
+
+      let itemClass = this.parentNode.className;
+
+      for (i = 0; i < aItem.length; i++) {
+        aItem[i].className = 'accordionItem close';
+      }
+      if (itemClass == 'accordionItem close') {
+        this.parentNode.className = 'accordionItem open';
+      }
+
+    }
+  </script>
+
+  <div class="attribution">
+    <p>Challenge by&nbsp;<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    </p>
+    <p>Coded by&nbsp;<a href="https://supraweb.dev/" target="_blank">Łukasz Gąsiecki</a>.</p>
+  </div>
+
+
+</body>
+
+</html>
